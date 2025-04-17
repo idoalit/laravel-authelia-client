@@ -1,0 +1,26 @@
+{
+    "name": "idoalit/laravel-authelia",
+    "autoload": {
+        "psr-4": {
+            "Idoalit\\LaravelAuthelia\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Waris Agung Widodo",
+            "email": "ido.alit@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Idoalit\\LaravelAuthelia\\LaravelAutheliaServiceProvider"
+            ],
+            "aliases": {
+                "Authelia": "Idoalit\\LaravelAuthelia\\Facades\\Authelia"
+            }
+        }
+    },
+    "require": {},
+    "minimum-stability": "stable"
+}
