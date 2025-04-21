@@ -79,6 +79,7 @@ class OauthController extends Controller
         $access_token = $token_data['access_token'] ?? null;
 
         if (is_null($access_token)) {
+            Log::error($response->body());
             // redirect to login page
             return redirect()->route('oauth.login');
         }
