@@ -98,6 +98,12 @@ class OauthController extends Controller
         $resource_data = json_decode($response, true);
         $email = $resource_data[config('laravel-authelia.user_info_email_field')];
 
+        if (!config('laravel-authelia.auto_create_user')) {
+            session()->flash('message', 'User not found');
+            session()->flash('name', $resource_data['name']);
+            return redirect()->route('oauth.unauthorized');
+        }
+
         $user = User::firstOrCreate(['email' => $email], [
             'name' => $resource_data['name'],
             'email' => $email,

@@ -127,6 +127,16 @@
                 transform: translateY(0px);
             }
         }
+        .alert {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #d6d8db;
+            border-radius: 5px;
+            background-color: #f8d7da;
+            color: #721c24;
+            font-size: 16px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -135,6 +145,9 @@
     <div class="message">
         <h1>Access to this page is restricted</h1>
         <p>Contact your administrator if you think this is a mistake.</p>
+        @if (session('message'))
+            <p class="alert">{{ session('message') }}</p>
+        @endif
         <p>Or go back to <a href="{{ url('/') }}">home</a></p>
     </div>
 </body>

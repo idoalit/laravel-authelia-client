@@ -37,4 +37,6 @@ return [
     'token_url' => env('OAUTH_TOKEN_URL', 'https://auth.poltekkes-smg.ac.id/api/oidc/token'),
     'user_info_url' => env('OAUTH_USER_INFO_URL', 'https://auth.poltekkes-smg.ac.id/api/oidc/userinfo'),
     'user_info_email_field' => env('OAUTH_USER_INFO_EMAIL_FIELD', 'email'),
+
+    'auto_create_user' => env('OAUTH_AUTO_CREATE_USER', false),
 ];
